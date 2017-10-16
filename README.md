@@ -1,2 +1,2 @@
 # Curso_Angular
-curso de Angular en Indra (Malaga)
+curso de Angular 4 en Indra (Malaga)
