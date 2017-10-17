@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+#ingnore dist1 y dist2
+dist1
+dist2
+
