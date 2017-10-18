@@ -18,9 +18,17 @@ export class Datos1Component implements OnInit {
   }
 
   btnInsert() {
-    this.libros.push(this.autor + ' - ' + this.titulo);
+    if (this.autor !== 'Fernando') {
+      this.libros.push(this.autor + ' - ' + this.titulo);
+    }
     this.autor = '';
     this.titulo = '';
+  }
+
+  btnBorrar() {
+    if (this.libros.length !== -1) {
+      this.libros.splice(this.libros.length - 1, 1);
+    }
   }
 
 }

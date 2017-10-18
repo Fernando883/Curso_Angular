@@ -5,7 +5,8 @@
         <label for="idea">Titulo</label>
         <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo">
         </p>
-        <button (click)="btnInsert()">Añadir</button>
+        <button (click)="btnInsert($event)">Añadir</button>
+        <button (click)="btnBorrar()">Borrar</button>
         <div *ngIf="libros.length">
                 <h2>Listado de Libros</h2>       
                 <ul>
