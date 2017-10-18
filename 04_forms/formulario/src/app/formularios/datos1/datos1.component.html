@@ -1,0 +1,38 @@
+<div class="container">        
+        <form novalidate (ngSubmit)="btnInsert()" #formulario="ngForm">
+                <p>
+                <label for="autor">Autor</label>
+                <input required minlength="4" type="text" id="autor" name="autor" [(ngModel)]="oLibro.autor">
+                </p>
+                <p>                        
+                <label for="titulo">titulo</label>
+                <input required="true" type="text" id="titulo" name="titulo" [(ngModel)]="oLibro.titulo">
+                </p>
+                <input type="checkbox" id="exlibris" name="exlibris" [(ngModel)]="oLibro.exlibris">
+                <label for="exlibris">Disponible</label>             
+                <p>Seleciona un género</p> 
+                <input type="radio" id="fantastico" name="genero" [(ngModel)]="oLibro.genero" value="fantastico">    
+                <label for="genero">fantastico</label>         
+
+                <input type="radio" id="policiaco" name="genero" [(ngModel)]="oLibro.genero" value="policiaco">    
+                <label for="genero">policiaco</label>  
+
+                <input type="radio" id="otros" name="genero" [(ngModel)]="oLibro.genero" value="otros">    
+                <label for="genero">otros</label>                      
+                <br><br>
+                
+                <select name="pais" id="pais" [(ngModel)]="oLibro.pais">
+                        <option *ngFor="let pais of aPaises" [ngValue]="pais">{{pais.nombre}}</option>                      
+                </select>
+           <!--     <button type="submit" (click)="btnInsert()">Añadir</button> -->               
+                <button type="submit" [disabled]="formulario.invalid">Añadir</button>
+                <button type="button" (click)="btnBorrar()">Borrar</button>
+        </form>
+        <div *ngIf="estaEnviado">
+                <h2>Resultado</h2> 
+                <p>{{oLibro | json}}</p>
+                <h2>Libros</h2>
+                <p>{{oLibros | json}}</p>
+        </div>
+</div>
+

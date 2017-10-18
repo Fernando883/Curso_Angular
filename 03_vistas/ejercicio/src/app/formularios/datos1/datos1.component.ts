@@ -9,12 +9,16 @@ export class Datos1Component implements OnInit {
   autor: string;
   titulo: string;
   libros: Array<string>;
+  precio: number;
+  birthday: Date;
   constructor() { }
 
   ngOnInit() {
     this.autor = '';
     this.titulo = '';
     this.libros = [];
+    this.precio = 23;
+    this.birthday = new Date(2017, 3, 15); // April 15, 1988
   }
 
   btnInsert() {
