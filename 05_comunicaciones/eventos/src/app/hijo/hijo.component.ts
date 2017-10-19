@@ -1,3 +1,4 @@
+import { LibrosService } from '../servicios/libros.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -12,19 +13,27 @@ export class HijoComponent implements OnInit {
 
   @Output()
   public borrar: EventEmitter<string>;
+  sClave: string;
+  aLibros: Array<String>;
 
   nombrePrefe: string;
 
-  constructor() {
+  constructor(private librosServicios: LibrosService) {
     this.borrar = new EventEmitter<any>();
   }
 
   ngOnInit() {
     this.nombrePrefe = '';
+    this.sClave = '';
+    this.aLibros = [];
   }
 
   btnBorrar () {
     this.borrar.emit(this.nombrePrefe);
     console.log(this.borrar);
+  }
+
+  btnBuscar() {
+    this.aLibros = this.librosServicios.getLibro(this.sClave);
   }
 }

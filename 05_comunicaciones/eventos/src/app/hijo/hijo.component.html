@@ -2,5 +2,5 @@
     <p>hijo works!</p>
     <p>Hola {{usuario}}</p>   
     <p><button (click)="btnBorrar()">No me gusta</button></p>   
-    <input type="text" placeholder="Nombre que te gusta" [(ngModel)]="nombrePrefe">
+    <input type="text" placeholder="Nombre que te gusta" (click)="btnBuscar()" [(ngModel)]="sClave">
 </div>
